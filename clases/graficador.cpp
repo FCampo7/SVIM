@@ -32,11 +32,11 @@ void Graficador::mousePressEvent(QMouseEvent *e){
     }
 }
 
-int Graficador::verx(){
+unsigned int Graficador::verx(){
     return x;
 }
 
-int Graficador::very(){
+unsigned int Graficador::very(){
     return y;
 }
 

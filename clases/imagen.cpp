@@ -90,3 +90,22 @@ void Imagen::ModifMeta(std::string clave, std::string valor){
 void Imagen::VaciarMetadato(){
     met.VaciarMetadato();
 }
+
+Imagen& Imagen::operator=(const Imagen& img){
+    if(this != &img){
+        this->TamPX=img.TamPX;
+        this->TamPY=img.TamPY;
+        this->ancho=img.ancho;
+        this->alto=img.alto;
+        this->met=img.met;
+        this->unidad=img.unidad;
+        this->pix.resize(TamPY);
+        for(unsigned int i=0; i<TamPY; i++){
+            this->pix[i].resize(TamPX);
+            for(unsigned int j=0; j<TamPX; j++){
+                this->pix[i][j]=img.pix[i][j];
+            }
+        }
+    }
+    return *this;
+}

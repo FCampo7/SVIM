@@ -10,7 +10,6 @@ private:
     unsigned posx, posy;
     Pixel p; //pixel de referencia
     Pixel Cbase;
-    Imagen imaux;
 public:
     DetectorDeEstructuras(int px,int py,Pixel p1);
     void procesar(Imagen &img);

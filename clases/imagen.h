@@ -35,6 +35,7 @@ public:
     std::string GuardarMetadato();
     void ModifMeta(std::string clave, std::string valor);
     void VaciarMetadato();
+    Imagen& operator=(const Imagen& img);
 };
 
 #endif

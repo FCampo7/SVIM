@@ -17,8 +17,8 @@ private:
 public:
     explicit Graficador(QWidget *parent = 0);
     void recibir_imagen(Imagen *ima);
-    int verx();
-    int very();
+    unsigned int verx();
+    unsigned int very();
     ~Graficador();
 signals:
     void clicked();

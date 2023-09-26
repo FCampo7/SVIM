@@ -63,7 +63,7 @@ void MainWindow::on_AplicarFiltro_clicked()
         click=true;
     }
     else{
-        if(((ui->Graf->verx()>=0)&&(ui->Graf->verx()<ima.VerTamX()))&&((ui->Graf->very()>=0)&&(ui->Graf->very()<ima.VerTamY()))){
+        if(ui->Graf->verx()<ima.VerTamX() && ui->Graf->very()<ima.VerTamY()){
             click=false;
             ui->Error->setText("");
             disconnect(ui->Graf, SIGNAL(clicked()),ui->AplicarFiltro,SLOT(click()));
