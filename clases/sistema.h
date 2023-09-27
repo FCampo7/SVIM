@@ -2,11 +2,11 @@
 #define SISTEMA_H
 
 #include <string>
-#include "clases/archivo.cpp"
+#include "clases/archivo.hpp"
 #include "clases/formatomif.h"
 #include "clases/imagen.h"
 #include "clases/graficador.h"
-#include "clases/procesador.cpp"
+#include "clases/procesador.hpp"
 #include "clases/filtrocolor.h"
 #include "clases/detectordeestructuras.h"
 

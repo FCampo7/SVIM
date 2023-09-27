@@ -8,7 +8,7 @@
 #include <QStringList>
 #include <QRegularExpression>
 #include "imagen.h"
-#include "archivo.cpp"
+#include "archivo.hpp"
 
 /**
  * @brief Clase que representa un formato de archivo específico (Formatomif).

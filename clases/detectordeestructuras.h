@@ -2,7 +2,7 @@
 #define DETECTORDEESTRUCTURAS_H
 
 #include "imagen.h"
-#include "procesador.cpp"
+#include "procesador.hpp"
 
 /**
  * @brief Clase que representa un detector de estructuras para una imagen.

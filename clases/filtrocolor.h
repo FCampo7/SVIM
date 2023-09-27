@@ -1,7 +1,7 @@
 #ifndef FILTROCOLOR_H
 #define FILTROCOLOR_H
 
-#include "procesador.cpp"
+#include "procesador.hpp"
 #include "imagen.h"
 
 /**

@@ -24,7 +24,8 @@ SOURCES += \
 
 HEADERS += \
     mainwindow.h \
-	clases/archivo.cpp \
+    clases/archivo.hpp \
+    clases/procesador.hpp \
 	clases/detectordeestructuras.h \
 	clases/filtrocolor.h \
 	clases/formatomif.h \
@@ -32,7 +33,6 @@ HEADERS += \
 	clases/imagen.h \
 	clases/metadato.h \
 	clases/pixel.h \
-	clases/procesador.cpp \
 	clases/sistema.h
 
 FORMS += \
