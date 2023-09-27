@@ -20,8 +20,8 @@ std::string Metadato::VerMetadatos(){
     std::string s="";
     for(std::map<std::string, std::string>::iterator it=contenido.begin(); it!=contenido.end(); it++){
         s+=it->first + ": " + it->second + "\n";
-	}
-	s=s.substr(0, s.length()-1);//Eliminar el ultimo caracter
+    }
+    s=s.substr(0, s.length()-1);//Eliminar el ultimo caracter
     return s;
 }
 
@@ -30,6 +30,6 @@ std::string Metadato::GuardarMetadatos(){
     for(std::map<std::string, std::string>::iterator it=contenido.begin(); it!=contenido.end(); it++){
         s+=it->first + ":" + it->second + ";";
     }
-	s=s.substr(0, s.length()-1);//Eliminar el ultimo caracter
+    s=s.substr(0, s.length()-1);//Eliminar el ultimo caracter
     return s;
 }

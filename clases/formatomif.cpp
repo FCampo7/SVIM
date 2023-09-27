@@ -71,7 +71,7 @@ void Formatomif::cargar(std::string nombrenuevo, Imagen &img){
     }
 }
 
-void Formatomif::guardar(std::string nombrenuevo, Imagen img){
+void Formatomif::guardar(std::string nombrenuevo, Imagen &img){
     unsigned short rojo, verde, azul;
     Pixel pixaux;
     std::ofstream archi(nombrenuevo.c_str(), std::ios::trunc);

@@ -16,13 +16,12 @@ void Graficador::recibir_imagen(Imagen *ima){
 }
 
 void Graficador::mousePressEvent(QMouseEvent *e){
-    if(e->type()==QMouseEvent::MouseButtonPress){
+    if(estado && e->type()==QMouseEvent::MouseButtonPress){
         x=e->position().x();
         y=e->position().y();
         if(propancho>propalto){
             x=((x-(((width()-(imagraf->VerTamX()*propalto))/2.0f)))/propalto); //Quitamos las transformaciones de traslacion y escala para obtener la posicion de x donde se encuntra el pixel
             y=y/propalto; //Solo quitamos la escala en y, ya que no sufrio traslacion en este eje
-
         }
         else{
             x=x/propancho; //Solo quitamos la escala en x, ya que no sufrio traslacion en este eje
@@ -50,7 +49,6 @@ void Graficador::initializeGL(){
 }
 
 void Graficador::resizeGL(int width, int height){
-
     // tamaño ventana de salida
     glViewport(0, 0, width, height);
 
@@ -60,7 +58,6 @@ void Graficador::resizeGL(int width, int height){
     glOrtho(0.0f,width,0.0f,height, -1.0f, 1.0f);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-
 }
 
 void Graficador::paintGL(){
@@ -91,17 +88,16 @@ void Graficador::paintGL(){
         }
         glBegin(GL_QUADS);
             for (unsigned int i=0; i<imagraf->VerTamY(); i++){
-                   for (unsigned int j=0; j<imagraf->VerTamX(); j++){
-                       colorpixel=imagraf->VerPixel(j, i);
-                       glColor3f(colorpixel.VerRojo(),colorpixel.VerVerde(),colorpixel.VerAzul());
-                       glVertex3f(j, (imagraf->VerTamY()-i)-1, 0.0);
-                       glVertex3f(j+1, (imagraf->VerTamY()-i)-1, 0.0);
-                       glVertex3f(j+1, (imagraf->VerTamY()-i), 0.0);
-                       glVertex3f(j, (imagraf->VerTamY()-i), 0.0);
-                   }
+               for (unsigned int j=0; j<imagraf->VerTamX(); j++){
+                   colorpixel=imagraf->VerPixel(j, i);
+                   glColor3f(colorpixel.VerRojo(),colorpixel.VerVerde(),colorpixel.VerAzul());
+                   glVertex3f(j, (imagraf->VerTamY()-i)-1, 0.0);
+                   glVertex3f(j+1, (imagraf->VerTamY()-i)-1, 0.0);
+                   glVertex3f(j+1, (imagraf->VerTamY()-i), 0.0);
+                   glVertex3f(j, (imagraf->VerTamY()-i), 0.0);
+               }
             }
         glEnd();
         glPopMatrix();
     }
-
 }

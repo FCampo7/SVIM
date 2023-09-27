@@ -42,12 +42,12 @@ float Pixel::CalcularBrillo(){
 
 bool Pixel::operator==(Pixel p){
     bool aux=false;
-    if ((p.VerRojo()<=(VerRojo()+0.05))&&(p.VerRojo()>=(VerRojo()-0.05))){
-        if ((p.VerVerde()<=(VerVerde()+0.05))&&(p.VerVerde()>=(VerVerde()-0.05))){
-            if ((p.VerAzul()<=(VerAzul()+0.05))&&(p.VerAzul()>=(VerAzul()-0.05))){
-                aux=true;
-            }
-        }
+    if (p.rojo<=(this->rojo+0.05) && p.rojo>=(this->rojo-0.05) && p.verde<=(this->verde+0.05) && p.verde>=(this->verde-0.05) && p.azul<=(this->azul+0.05) && p.azul>=(this->azul-0.05)){
+        aux=true;
     }
     return aux;
+}
+
+bool Pixel::operator!=(Pixel p){
+    return !(*this==p);
 }
